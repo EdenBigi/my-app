@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+.fade-anim img {
+    animation: fadeAnim 1.8s ease-out;
+}
+
+
+
+@keyframes fadeAnim {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.backgroundArctic {
+    background-color: antiquewhite;
+}
+
+
+.Audiowide {
+    font-family: "Audiowide", sans-serif;
+}
+
+.SquareRegular {
+    font-family: 'Square Peg', regular;
+}
+
+.Googlefont {
+    font-family: 'Square Peg', cursive;
+}
+
+.rounded1 {
+
+    border-radius: 0 0 10px 10px;
+}
+
+.rounded2 {
+
+    border-radius: 10px 10px 0 0;
+}
+
+.color1 {
+    color: #afcfff
+}
