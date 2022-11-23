@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import './App.css';
 import Header from './Components/Header';
 import Home from './Components/Home';
 import Shop from './Components/Shop/Shop';
@@ -13,7 +12,6 @@ import Cart from './Components/Shop/Cart';
 import Footer from './Components/Footer';
 import { arrForFooter } from './Components/FooterArr';
 import ContactUs from './Components/ContactUs';
-import UserLoggedIn from './Components/UserLoggedIn';
 import FAQ from './Components/FAQ';
 import ProductInfo from './Components/Shop/ProductInfo';
 
@@ -51,7 +49,7 @@ const App = () => {
     const fetchProducts = async () => {
       setIsLoading(true);
       try {
-        const data = await fetch('https://edenbigi.github.io/my-app/backy2y/routes/items');
+        const data = await fetch('http://localhost:5051/api/items');
         const products = await data.json();
 
         setIsLoading(false);
@@ -123,8 +121,8 @@ const App = () => {
 
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
-          <Route path='https://edenbigi.github.io/my-app/' element={<Home />} />
-          <Route path='https://edenbigi.github.io/my-app/shop' element={<Shop handleAddToCart={handleAddToCart}
+          <Route path='/' element={<Home />} />
+          <Route path='/shop' element={<Shop handleAddToCart={handleAddToCart}
             products={products} isLoading={isLoading}
             filters={filters} setFilters={setFilters}
             activeCategory={activeCategory} setActiveCategory={setActiveCategory}
@@ -133,7 +131,7 @@ const App = () => {
             activeColor={activeColor} setActiveColor={setActiveColor}
           />} />
 
-          <Route path='https://edenbigi.github.io/my-app/shop/:category' element={<Shop handleAddToCart={handleAddToCart}
+          <Route path='/shop/:category' element={<Shop handleAddToCart={handleAddToCart}
             products={products} isLoading={isLoading}
             filters={filters} setFilters={setFilters}
             activeCategory={activeCategory} setActiveCategory={setActiveCategory}
@@ -142,7 +140,7 @@ const App = () => {
             activeColor={activeColor} setActiveColor={setActiveColor}
           />} />
 
-          <Route path='https://edenbigi.github.io/my-app/shop/brand/:brand' element={<Shop handleAddToCart={handleAddToCart}
+          <Route path='/shop/brand/:brand' element={<Shop handleAddToCart={handleAddToCart}
             products={products} isLoading={isLoading}
             filters={filters} setFilters={setFilters}
             activeCategory={activeCategory} setActiveCategory={setActiveCategory}
@@ -150,14 +148,14 @@ const App = () => {
             activeBrand={activeBrand} setActiveBrand={setActiveBrand}
             activeColor={activeColor} setActiveColor={setActiveColor}
           />} />
-          <Route path='https://edenbigi.github.io/my-app/products/:id' element={<ProductInfo products={products} handleAddToCart={handleAddToCart} />} />
+          <Route path='/products/:id' element={<ProductInfo products={products} handleAddToCart={handleAddToCart} />} />
 
-          <Route path='https://edenbigi.github.io/my-app/userloggedin' element={<UserLoggedIn statusText={res} />} />
-          <Route path='https://edenbigi.github.io/my-app/signin' element={<Login setRes={setRes} />} />
-          <Route path='https://edenbigi.github.io/my-app/contactus' element={<ContactUs />} />
-          <Route path='https://edenbigi.github.io/my-app/privacy-policy' element={<Privacy />} />
-          <Route path='https://edenbigi.github.io/my-app/faq' element={<FAQ />} />
-          <Route path='https://edenbigi.github.io/my-app/about' element={<About />} />
+
+          <Route path='/signin' element={<Login setRes={setRes} />} />
+          <Route path='/contactus' element={<ContactUs />} />
+          <Route path='/privacy-policy' element={<Privacy />} />
+          <Route path='/faq' element={<FAQ />} />
+          <Route path='/about' element={<About />} />
         </Routes>
 
       </BrowserRouter>

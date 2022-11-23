@@ -4,7 +4,7 @@ import { FiMessageSquare } from 'react-icons/fi'
 const About = () => {
     return (<>
 
-        <div className='px-4 sm:w-full w-screen xl:px-[150px] '>
+        <div className='px-4 py-16 sm:w-full w-screen xl:px-[150px] '>
 
             <div className='mainAbout backgroundArctic  text-left rounded-xl mb-4 px-8 py-1 pt-6'>
                 <div className='flex'>

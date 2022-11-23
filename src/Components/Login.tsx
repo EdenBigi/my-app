@@ -2,9 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { BsFacebook, BsGithub } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
-import { log } from 'console';
-import UserLoggedIn from './UserLoggedIn';
-import { Divider } from 'antd';
+
 
 
 type Props = {
@@ -30,7 +28,7 @@ const Login: React.FC<Props> = ({ setRes }) => {
 
     function SignIn() {
 
-        fetch("../backy2y/routes/sessions/login",
+        fetch("http://localhost:5051/api/sessions/login",
             {
                 headers: {
                     'Accept': 'application/json',

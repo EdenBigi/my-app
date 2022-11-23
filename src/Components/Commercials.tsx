@@ -5,9 +5,9 @@ import { IoIosArrowDropleft, IoIosArrowDropright } from 'react-icons/io'
 
 
 const featuredProducts = [
-    './slide_2.jpg',
-    './slide_3.jpg',
-    './slide_new_mob.jpg',
+    '/my-yad2yokra-app/slide_2.jpg',
+    '/my-yad2yokra-app/slide_3.jpg',
+    '/my-yad2yokra-app/slide_new_mob.jpg',
 ]
 
 let count = 0;
